@@ -10,8 +10,14 @@ export default class Elem {
         this.#kattintasKezelo();
     }
     megjelenit() {
+        let osztaly = "";
+        if (this.#adat === "X") {
+            osztaly = "x";
+        } else if (this.#adat === "O") {
+            osztaly = "o";
+        }
         let html = `<div class="elem">
-                        <div>${this.#adat}</div>
+                        <div class="${osztaly}">${this.#adat}</div>
                     </div>`;
         this.szuloElem.insertAdjacentHTML("beforeend", html);
     }
